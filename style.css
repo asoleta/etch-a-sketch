@@ -14,7 +14,12 @@ body {
     display: flex;
     font-size: 75px;
     justify-content: center;
-    padding: 20px;
+    padding-top: 50px;
+    /*Rainbow gradient text*/
+    background-image: linear-gradient(to left, violet, 
+    indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .header {
