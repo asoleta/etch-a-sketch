@@ -4,6 +4,12 @@
     padding: 0px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .title {
     display: flex;
     font-size: 75px;
@@ -38,6 +44,7 @@
     justify-content: center;
     align-items: center;
     gap: 100px;
+    padding: 50px;
 }
 
 .footer button {
@@ -68,3 +75,11 @@
     background-color: white;
 }
 
+.container {
+    width: 500px;
+    height: 500px;
+    display:grid;
+    border: 3px solid black;
+    background-color: white;
+
+}
