@@ -31,6 +31,7 @@ function createBoard(size)
     for (let i = 0; i < numDivs; i++)
     {
         let div = document.createElement("div");
+        div.style.backgroundColor = "white";
         div.addEventListener("mouseover", colorDiv);
         board.insertAdjacentElement("beforeend", div);
     }
@@ -78,4 +79,11 @@ function colorDiv()
 function setColor(colorChoice)
 {
     color = colorChoice;
+}
+
+//reset the board
+function resetBoard() 
+{
+    let divs = document.querySelectorAll(".container div");
+    divs.forEach((div) => div.style.backgroundColor = "white");
 }
