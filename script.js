@@ -1,3 +1,7 @@
+//create global variable
+//default color is black
+let color = "black";
+
 //ensures that all HTML is loaded before starting
 document.addEventListener("DOMContentLoaded", function(){
     //default size
@@ -27,6 +31,7 @@ function createBoard(size)
     for (let i = 0; i < numDivs; i++)
     {
         let div = document.createElement("div");
+        div.addEventListener("mouseover", colorDiv);
         board.insertAdjacentElement("beforeend", div);
     }
 }
@@ -52,4 +57,25 @@ function getSize()
         message.innerHTML = "Board size successfully changed!";
         return input;
     }
+}
+
+//change the color
+function colorDiv()
+{
+    if (color == "random")
+    {
+        //access the current div
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+    }
+
+    else
+    {
+        this.style.backgroundColor = 'black';
+    }
+}
+
+//set color based on the button pressed
+function setColor(colorChoice)
+{
+    color = colorChoice;
 }
