@@ -30,4 +30,41 @@
 
 #popup:hover {
     background-color: rgb(247, 199, 110);
+    cursor: pointer;
 }
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.footer button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+
+.footer button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.footer #black {
+    background-image: linear-gradient(to right, rgb(148, 148, 148) 0%,
+    rgb(104, 102, 102) 51%, rgb(139, 139, 139) 100%);
+    color: white;
+}
+
+.footer #random {
+    background-image: linear-gradient(to right, #f6d365 0%,
+    #fda085 51%, #f6d365 100%);
+    color: white;
+}
+
+.footer #reset {
+    background-color: white;
+}
+
