@@ -1,12 +1,33 @@
 //create global variable
 //default color is black
 let color = "black";
+let click = false;
 
 //ensures that all HTML is loaded before starting
 document.addEventListener("DOMContentLoaded", function(){
     //default size
     createBoard(16);
 
+    //turn drawing on or off
+    document.querySelector("body").addEventListener("click", function(e) {
+        if (e.target.tagName != "BUTTON") 
+        {
+            click = !click; //DeMorgan's Law
+            let draw =  document.querySelector("#draw");
+
+            if (click)
+            {
+                draw.innerHTML = "Click anywhere to stop drawing.";
+            }
+
+            else
+            {
+                draw.innerHTML = "Click anywhere to start drawing.";
+            }
+        }
+    })
+
+    //call functions to reset board
     let popupBtn = document.querySelector("#popup");
     popupBtn.addEventListener("click", function() {
         let size = getSize();
@@ -63,15 +84,18 @@ function getSize()
 //change the color
 function colorDiv()
 {
-    if (color == "random")
+    if (click)
     {
-        //access the current div
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
-    }
+        if (color == "random")
+        {  
+            //access the current div
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+        }
 
-    else
-    {
-        this.style.backgroundColor = 'black';
+        else
+        {
+            this.style.backgroundColor = 'black';
+        }
     }
 }
 
